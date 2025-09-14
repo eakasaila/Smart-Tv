@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellar Smart TV Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      scroll-behavior: smooth;
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #4c2d73, #8a48c6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-slider {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .card-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 3D effect */
+    .parallax {
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-out;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <!-- Bright Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://i.ibb.co/m5DX8cb8/your-image.jpg" 
+           alt="Smart TV Hero" 
+           class="w-full h-full object-cover brightness-110 scale-105"
+           id="heroImage">
+      <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    </div>
+
+    <!-- Text Content with 3D Animation -->
+    <div class="relative z-10 text-center max-w-4xl mx-auto parallax" id="heroText">
+      <h1 class="text-5xl md:text-7xl font-bold gradient-text leading-tight mb-4 animate-pulse">
+        Experience Cinematic Brilliance
+      </h1>
+      <p class="text-lg md:text-xl text-gray-100 mb-8">
+        Immerse yourself in a world of stunning visuals and intelligent features with the Stellar Smart TV.
+      </p>
+      <a href="#features" 
+         class="inline-block px-8 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 transform hover:scale-105">
+        Explore Features
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 px-4 bg-gray-100 fade-in">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center gradient-text mb-12">Key Features</h2>
+      <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 items-center justify-center">
+        <!-- 4K UHD Card -->
+        <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm transform hover:-translate-y-2">
+          <img src="https://i.ibb.co/23XMtgQy/Screenshot-2025-09-14-175633.png">
+          <h3 class="text-2xl font-semibold mb-2 text-gray-800">Spectacular 4K UHD</h3>
+          <p class="text-gray-600">Witness every detail with a billion shades of color and unparalleled clarity.</p>
+        </div>
+        <!-- Smart AI Card -->
+        <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm transform hover:-translate-y-2">
+          <img src="https://i.ibb.co/KzjzP11G/Screenshot-2025-09-14-180003.png">
+          <h3 class="text-2xl font-semibold mb-2 text-gray-800">Intelligent AI Engine</h3>
+          <p class="text-gray-600">Enjoy personalized recommendations and effortless control with our built-in AI assistant.</p>
+        </div>
+        <!-- Dolby Atmos Card -->
+        <div class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-sm transform hover:-translate-y-2">
+          <img src="https://i.ibb.co/ZRRBzqgb/Screenshot-2025-09-14-180151.png">
+          <h3 class="text-2xl font-semibold mb-2 text-gray-800">Immersive Dolby Atmos</h3>
+          <p class="text-gray-600">Feel the sound flow all around you with powerful and dynamic audio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Section -->
+  <section id="apps" class="py-20 px-4 bg-gray-50 fade-in">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center gradient-text mb-12">Apps & Connectivity</h2>
+      <div class="card-slider flex space-x-6 overflow-x-auto pb-4">
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/yFR1mjJh/Screenshot-2025-09-14-180336.png">
+          <h4 class="text-lg font-semibold text-gray-700">Disney+</h4>
+        </div>
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" class="h-20 mx-auto mb-4">
+          <h4 class="text-lg font-semibold text-gray-700">Netflix</h4>
+        </div>
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" class="h-20 mx-auto mb-4">
+          <h4 class="text-lg font-semibold text-gray-700">YouTube</h4>
+        </div>
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/4wxrMxz4/Screenshot-2025-09-14-180932.png">
+          <h4 class="text-lg font-semibold text-gray-700">Prime Video</h4>
+        </div>
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/WTc2VHn/Screenshot-2025-09-14-181117.png">
+          <h4 class="text-lg font-semibold text-gray-700">Wi-Fi 6</h4>
+        </div>
+        <div class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-5 text-center hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/nMc26MrB/Screenshot-2025-09-14-181317.png">
+          <h4 class="text-lg font-semibold text-gray-700">Bluetooth 5.0</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 bg-white fade-in">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold gradient-text mb-4">Ready to Upgrade?</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Discover a new standard of home entertainment with the Stellar Smart TV. Order yours today.
+      </p>
+      <a href="#hero" class="inline-block px-12 py-4 bg-purple-600 text-white font-bold rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 transform hover:scale-110">
+        Buy Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Fade-in sections on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+      faders.forEach(fader => appearOnScroll.observe(fader));
+    });
+
+    // 3D parallax effect
+    const hero = document.getElementById("hero");
+    const heroText = document.getElementById("heroText");
+
+    hero.addEventListener("mousemove", (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX - innerWidth / 2) / 25;
+      const y = (e.clientY - innerHeight / 2) / 25;
+      heroText.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+    });
+
+    hero.addEventListener("mouseleave", () => {
+      heroText.style.transform = "rotateY(0deg) rotateX(0deg)";
+    });
+  </script>
+</body>
+</html>
